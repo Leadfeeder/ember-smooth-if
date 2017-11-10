@@ -1,0 +1,1 @@
+export { default } from 'ember-smooth-if/components/smooth-if';

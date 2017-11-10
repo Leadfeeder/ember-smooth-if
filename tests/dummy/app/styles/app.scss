@@ -1,0 +1,70 @@
+.tomster-fade {
+  transition: 0.3s opacity;
+  opacity: 1;
+
+  &.transition-in {
+    opacity: 0;
+  }
+
+  &.transition-out {
+    opacity: 0;
+  }
+}
+
+.tomster-slide-from-side {
+  transition: 0.3s opacity, 0.3s transform;
+  opacity: 1;
+  transform: translateY(0);
+
+  &.transition-in {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+
+  &.transition-out {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes zoomrotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-500deg) scale(0.4);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes hide-and-slide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  33% {
+    opacity: 0.6;
+    transform: scale(0.5);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateX(300px);
+  }
+}
+
+.tomster-zoom-rotate {
+  transform-origin: 50% 50%;
+  display: inline-block;
+  
+  &.transition-in {
+    animation: 0.5s zoomrotate forwards;
+  }
+
+  &.transition-out {
+    animation: 0.3s hide-and-slide forwards;
+  }
+}

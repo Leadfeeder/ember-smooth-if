@@ -1,3 +1,19 @@
 <h2 id="title">Welcome to Ember</h2>
 
+Display image:
+<button onclick={{action (mut displayImage) true}}>Yes</button>
+<button onclick={{action (mut displayImage) false}}>No</button>
+
+{{input placeholder="Class name..." value=class}}
+
+<button onclick={{action (mut class) "tomster-fade"}}>Fade</button>
+<button onclick={{action (mut class) "tomster-slide-from-side"}}>Slide from side</button>
+<button onclick={{action (mut class) "tomster-zoom-rotate"}}>Zoom rotate</button>
+
+<br>
+
+{{#smooth-if displayImage class=class}}
+  <img src="https://emberjs.com/images/tomsters/original-72df3a45.png" alt="">
+{{/smooth-if}}
+
 {{outlet}}
