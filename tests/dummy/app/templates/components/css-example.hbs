@@ -1,0 +1,71 @@
+<pre style="background:#002240;color:#fff"><span style="color:#5fe461"><span style="color:#e1efff">.</span>tomster-fade</span> <span style="color:#e1efff">{</span>
+  transition<span style="color:#e1efff">:</span> <span style="color:#edf080">0.3<span style="color:#ff9d00">s</span></span> opacity<span style="color:#e1efff">;</span>
+  <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">1</span><span style="color:#e1efff">;</span>
+
+  &amp;.transition-in {
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+  }
+
+  &amp;<span style="color:#5fe461"><span style="color:#e1efff">.</span>transition-out</span> <span style="color:#e1efff">{</span>
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+  }
+}
+
+<span style="color:#5fe461"><span style="color:#e1efff">.</span>tomster-slide-from-side</span> <span style="color:#e1efff">{</span>
+  transition<span style="color:#e1efff">:</span> <span style="color:#edf080">0.3<span style="color:#ff9d00">s</span></span> opacity, <span style="color:#edf080">0.3<span style="color:#ff9d00">s</span></span> transform<span style="color:#e1efff">;</span>
+  <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">1</span><span style="color:#e1efff">;</span>
+  transform<span style="color:#e1efff">:</span> translateY(<span style="color:#edf080">0</span>)<span style="color:#e1efff">;</span>
+
+  &amp;.transition-in {
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> translateX(<span style="color:#edf080">-300<span style="color:#ff9d00">px</span></span>)<span style="color:#e1efff">;</span>
+  }
+
+  &amp;<span style="color:#5fe461"><span style="color:#e1efff">.</span>transition-out</span> <span style="color:#e1efff">{</span>
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> translateX(<span style="color:#edf080">-300<span style="color:#ff9d00">px</span></span>)<span style="color:#e1efff">;</span>
+  }
+}
+
+@keyframes zoomrotate <span style="color:#e1efff">{</span>
+  0% {
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> rotate(<span style="color:#edf080">-500<span style="color:#ff9d00">deg</span></span>) scale(<span style="color:#edf080">0.4</span>)<span style="color:#e1efff">;</span>
+  }
+  
+  100% <span style="color:#e1efff">{</span>
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">1</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> rotate(<span style="color:#edf080">0<span style="color:#ff9d00">deg</span></span>) scale(<span style="color:#edf080">1</span>)<span style="color:#e1efff">;</span>
+  }
+}
+
+@keyframes hide-and-slide <span style="color:#e1efff">{</span>
+  0% {
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">1</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> scale(<span style="color:#edf080">1</span>)<span style="color:#e1efff">;</span>
+  }
+
+  33% <span style="color:#e1efff">{</span>
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0.6</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> scale(<span style="color:#edf080">0.5</span>)<span style="color:#e1efff">;</span>
+  }
+  
+  100% <span style="color:#e1efff">{</span>
+    <span style="color:#9df39f">opacity</span><span style="color:#e1efff">:</span> <span style="color:#edf080">0</span><span style="color:#e1efff">;</span>
+    transform<span style="color:#e1efff">:</span> scale(<span style="color:#edf080">0.5</span>) translateX(<span style="color:#edf080">300<span style="color:#ff9d00">px</span></span>)<span style="color:#e1efff">;</span>
+  }
+}
+
+<span style="color:#5fe461"><span style="color:#e1efff">.</span>tomster-zoom-rotate</span> <span style="color:#e1efff">{</span>
+  transform-origin<span style="color:#e1efff">:</span> <span style="color:#edf080">50<span style="color:#ff9d00">%</span></span> <span style="color:#edf080">50<span style="color:#ff9d00">%</span></span><span style="color:#e1efff">;</span>
+  <span style="color:#9df39f">display</span><span style="color:#e1efff">:</span> <span style="color:#f6f080">inline-block</span><span style="color:#e1efff">;</span>
+  
+  &amp;.transition-in {
+    animation<span style="color:#e1efff">:</span> <span style="color:#edf080">0.5<span style="color:#ff9d00">s</span></span> zoomrotate forwards<span style="color:#e1efff">;</span>
+  }
+
+  &amp;<span style="color:#5fe461"><span style="color:#e1efff">.</span>transition-out</span> <span style="color:#e1efff">{</span>
+    animation<span style="color:#e1efff">:</span> <span style="color:#edf080">0.3<span style="color:#ff9d00">s</span></span> hide-and-slide forwards<span style="color:#e1efff">;</span>
+  }
+}
+</pre>

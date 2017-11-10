@@ -1,28 +1,34 @@
 .tomster-fade {
-  transition: 0.3s opacity;
+  transition: 0.3s opacity, 0.3s max-height;
   opacity: 1;
+  max-height: 600px;
 
   &.transition-in {
     opacity: 0;
+    max-height: 0;
   }
 
   &.transition-out {
     opacity: 0;
+    max-height: 0;
   }
 }
 
 .tomster-slide-from-side {
-  transition: 0.3s opacity, 0.3s transform;
+  transition: 0.3s opacity, 0.3s transform, 0.3s max-height;
   opacity: 1;
   transform: translateY(0);
+  max-height: 600px;
 
   &.transition-in {
     opacity: 0;
+    max-height: 0;
     transform: translateX(-300px);
   }
 
   &.transition-out {
     opacity: 0;
+    max-height: 0;
     transform: translateX(-300px);
   }
 }
@@ -67,4 +73,12 @@
   &.transition-out {
     animation: 0.3s hide-and-slide forwards;
   }
+}
+
+pre {
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
 }
