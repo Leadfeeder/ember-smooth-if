@@ -1,19 +1,59 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="ui container">
+  <h2 id="title">Welcome to Ember</h2>
+  
+  Display image:
+  <button
+    class="ui button {{if displayImage "green"}}"
+    onclick={{action (mut displayImage) true}}>
+      Yes
+  </button>
+  <button
+    class="ui button {{if (not displayImage) "green"}}"
+    onclick={{action (mut displayImage) false}}>
+      No
+  </button>
 
-Display image:
-<button onclick={{action (mut displayImage) true}}>Yes</button>
-<button onclick={{action (mut displayImage) false}}>No</button>
-
-{{input placeholder="Class name..." value=class}}
-
-<button onclick={{action (mut class) "tomster-fade"}}>Fade</button>
-<button onclick={{action (mut class) "tomster-slide-from-side"}}>Slide from side</button>
-<button onclick={{action (mut class) "tomster-zoom-rotate"}}>Zoom rotate</button>
-
-<br>
-
-{{#smooth-if displayImage class=class}}
-  <img src="https://emberjs.com/images/tomsters/original-72df3a45.png" alt="">
-{{/smooth-if}}
-
-{{outlet}}
+  <div class="ui divider"></div>
+  
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="ui form">
+        <span class="field">
+          <label>Class name</label>
+          {{input placeholder="Class name..." value=class}}
+        </span>
+      </div>
+    </div>
+    <div class="column">
+      <button
+        class="ui button {{if (eq class "tomster-fade") "green"}}"
+        onclick={{action (mut class) "tomster-fade"}}>
+          Fade
+      </button>
+      <button
+        class="ui button {{if (eq class "tomster-slide-from-side") "green"}}"
+        onclick={{action (mut class) "tomster-slide-from-side"}}>
+          Slide from side
+      </button>
+      <button
+        class="ui button {{if (eq class "tomster-zoom-rotate") "green"}}"
+        onclick={{action (mut class) "tomster-zoom-rotate"}}>
+          Zoom rotate
+      </button>
+    </div>
+  </div>
+  
+  
+  <br>
+  
+  {{#smooth-if displayImage class=class}}
+    <img src="https://emberjs.com/images/tomsters/original-72df3a45.png" alt="">
+  {{/smooth-if}}
+  
+  {{outlet}}
+  
+  <div style="opacity:0;height:0;width:0">
+    {{!-- Load the image ASAP --}}
+    <img src="https://emberjs.com/images/tomsters/original-72df3a45.png" alt="">
+  </div>
+</div>
