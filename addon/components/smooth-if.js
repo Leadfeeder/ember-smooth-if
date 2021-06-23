@@ -16,7 +16,7 @@ const SmoothIfComponent = Component.extend({
   transitionInTime: 200,
   transitionOutTime: 200,
 
-  _displayBlock: false,
+  displayBlock: false,
 
   init() {
     this._super(...arguments);
@@ -45,7 +45,7 @@ const SmoothIfComponent = Component.extend({
       if (!this.get('isDestroyed')) {
         classes.removeObject(transitionOutClass);
         classes.pushObject(transitionInClass);
-        this.set('_displayBlock', true);
+        this.set('displayBlock', true);
       }
 
       run.later(() => {
@@ -58,7 +58,7 @@ const SmoothIfComponent = Component.extend({
       run.later(() => {
         if (!this.get('isDestroyed')) {
           classes.removeObject(transitionOutClass);
-          this.set('_displayBlock', false);
+          this.set('displayBlock', false);
         }
       }, transitionOutTime);
     }
